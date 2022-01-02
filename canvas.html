@@ -5,25 +5,28 @@
 <script>
 // https://ryjkmr.com/fabric-js-free-drawing-basic/
 //htmlで作ったcanvas要素をidで指定して、canvasオブジェクトを生成。
-const canvasfabric.Canvas("canvas_in_html");
+const canvas = new fabric.Canvas("canvas_in_html");
 
 //サイズを設定。後から変更できる
 canvas.setWidth(300);
 canvas.setHeight(200);
 
 //フリードローイングを可能にする
-canvas.isDrawingMode ルファ（不透明度）。PNGでDLするときも有効
+canvas.isDrawingMode = true;
+// 背景色を設定。４つ目はアルファ（不透明度）。PNGでDLするときも有効
 canvas.setBackgroundColor(
-	  "rgba(255erAll.bind(canvas)
-		  );
+ "rgba(255, 255, 200, 1)",
+  canvas.renderAll.bind(canvas)
+);
 
-	//描画色の設定。RGB+不透明度。"rgb(255,50,40)"と書くrawingBrush.color = "rgba(255,50,40,0.5)"; // 描画する線の色 rgba
+//描画色の設定。RGB+不透明度。"rgb(255,50,40)"と書くとアルファを省略できる
+canvas.freeDrawingBrush.color = "rgba(255,50,40,0.5)";
 
-	//ペンサイズの設定
-	canvas.freeDrawingBrush.width = 10; // 描画する線の太さ
+//ペンサイズの設定
+canvas.freeDrawingBrush.width = 10; // 描画する線の太さ
 
-	// 全消し
-	//canvas.clear();
-	//バックグラウンドも消えるので、
-	//再度canvas.setBackgroundColorする必要がある
+// 全消し
+//canvas.clear();
+//バックグラウンドも消えるので、
+//再度canvas.setBackgroundColorする必要がある
 </script>
